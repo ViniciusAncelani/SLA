@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+#include <string.h>
+#include <stdbool.h>
+
+// Funcionando
+
+struct pessoa{
+char nome[50];
+int n;
+char curso[5];
+};
+
+void main (void){
+setlocale (LC_ALL, "portuguese");
+
+int i;
+struct pessoa p[5];
+
+for(i = 0; i < 5; i++){
+printf("Escreva o nome, n�mero e curso:");
+scanf("%s\n %d \n%s", &p[i].nome, &p[i].n, &p[i].curso);
+}
+
+for(i = 0; i < 5; i++){
+imprimir(p[i]);
+}
+
+}
+int imprimir(struct pessoa p){
+printf("Nome: 			Curso: 			N�mero:");
+printf("\n%s", p.nome);
+printf("			%s", p.curso);
+printf("			%d\n", p.n);
+}
