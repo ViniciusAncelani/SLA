@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+#include <string.h>
+#include <stdbool.h>
+
+struct dados{
+int h,m,s;
+int d,me,a;
+char c[50];
+};
+
+void main (void){
+setlocale (LC_ALL, "portuguese");
+struct dados da;
+
+printf("Digite o Hor�rio que deseja(hora:minutos:segundos):");
+scanf("%d:%d:%d", &da.h, &da.m, &da.s);
+
+printf("\n");
+
+printf("Digite a data que deseja(dia/m�s/ano):");
+scanf("%d/%d/%d", &da.d, &da.me, &da.a);
+
+printf("\n");
+
+printf("Digite o Compromisso(justificativa)");
+scanf("%s", &da.c);
+
+printf("\n");
+
+int d = imprimir(da);
+
+}
+void imprimir (struct dados da){
+int i;
+for(i = 0; i < 1; i++){
+printf("			Compromisso agendado!			");
+printf("\n");
+printf("Hor�rio:			Data:			Justificativa:\n");
+printf("\n%d:%d:%d", da.h, da.m, da.s);
+printf("				  %d", da.d, da.me, da.a);
+printf("			%s", da.c);
+}
+	}
